@@ -8,6 +8,7 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "postCreateCommand": "docker --version || true",
+  "postStartCommand": "/usr/local/bin/start-dockerd.sh || true",
   "customizations": {
     "vscode": {
       "extensions": [
