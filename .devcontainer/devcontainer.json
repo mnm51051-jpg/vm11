@@ -1,14 +1,16 @@
 {
   "name": "vm11-docker-codespace",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "workspaceFolder": "/workspaces/vm11",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/docker-cli:1": {}
+  },
+  "runArgs": ["--privileged"],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "postCreateCommand": "docker --version || true",
-  "postStartCommand": "/usr/local/bin/start-dockerd.sh || true",
   "customizations": {
     "vscode": {
       "extensions": [
